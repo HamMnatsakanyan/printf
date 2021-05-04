@@ -6,12 +6,13 @@
 /*   By: kchiling <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:32:05 by kchiling          #+#    #+#             */
-/*   Updated: 2021/03/22 16:32:10 by kchiling         ###   ########.fr       */
+/*   Updated: 2021/05/04 15:05:11 by hmnatsak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+//Flags that are used with specifiers in printf
 t_flags		ft_init_flags(void)
 {
 	t_flags		flags;
@@ -56,6 +57,7 @@ int			inputelem(t_flags *flags, char *str, va_list args, int i)
 	return (i);
 }
 
+//general function that is adding spaces and zeros where needed (based on flags)
 int			foo(char *str, va_list args)
 {
 	int		i;
@@ -87,10 +89,4 @@ int			ft_printf(const char *input, ...)
 	va_end(args);
 	free((char *)rezerv);
 	return (i);
-}
-
-int main()
-{
-	ft_printf("%asddas%%d", 12);
-	return 0;
 }
